@@ -23,7 +23,11 @@ const Navigation: React.FC<{
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-cyan-400 transition-colors duration-200"
+                className={`hover:text-cyan-400 transition-colors duration-200" ${
+                  activeSection == item.toLowerCase()
+                    ? " text-cyan-400 font-semibold"
+                    : " text-slate-300"
+                }`}
                 onClick={() => setActiveSection(item.toLowerCase())}
               >
                 {item}
